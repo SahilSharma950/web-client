@@ -9,7 +9,7 @@ const BlogList = () => {
   const { userInfo } = useContext(userContext);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api")
+    fetch("https://webserver-dd00.onrender.com/api")
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((err) => console.log("Error fetching blog list:", err));
@@ -17,7 +17,7 @@ const BlogList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/${id}`, {
+      const response = await fetch(`https://webserver-dd00.onrender.com/api/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

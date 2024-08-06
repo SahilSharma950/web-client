@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
 import toast from 'react-hot-toast';
 import inputContext from '../contex/inputcontext';
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://webserver-dd00.onrender.com/api";
 
 const Main = () => {
   const [data, setData] = useState([]);

@@ -6,7 +6,7 @@ const BlogPost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/blog/${id}`)
+    fetch(`https://webserver-dd00.onrender.com/api/blog/${id}`)
       .then((response) => response.json())
       .then((data) => setPost(data))
       .catch((err) => {

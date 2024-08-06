@@ -10,7 +10,7 @@ export default function BlogPage() {
   const [recentPosts, setRecentPosts] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/recent-posts")
+    fetch("https://webserver-dd00.onrender.com/api/recent-posts")
       .then(response => response.json())
       .then(posts => setRecentPosts(posts))
       .catch(err => {
@@ -20,7 +20,7 @@ export default function BlogPage() {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/blog/${id}`)
+    fetch(`https://webserver-dd00.onrender.com/api/blog/${id}`)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(err => {

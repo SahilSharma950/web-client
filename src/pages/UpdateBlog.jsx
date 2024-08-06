@@ -43,7 +43,7 @@ const UpdateBlog = () => {
 
 
   useEffect(()=>{
-    fetch(`http://localhost:3000/api/blog/${id}`)
+    fetch(`https://webserver-dd00.onrender.com/api/blog/${id}`)
    .then(response => response.json())
    .then(data => setFormData(data))
    .catch((err)=>{console.log("error fetching blog data :",err)})
@@ -58,7 +58,7 @@ const UpdateBlog = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3000/api/${id}`,{
+      const response = await fetch(`https://webserver-dd00.onrender.com/api/${id}`,{
         method : 'PUT',
         headers:{
             'Content-Type': 'application/json'

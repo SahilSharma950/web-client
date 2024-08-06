@@ -49,7 +49,7 @@ const CreateBlog = () => {
         toast.error('Please log in to create a blog');
         return;
       }
-      const response = await fetch('http://localhost:3000/api/create', {
+      const response = await fetch('https://webserver-dd00.onrender.com/api/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
