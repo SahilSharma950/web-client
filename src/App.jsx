@@ -1,4 +1,4 @@
-import { HashRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 import './App.css'
 import Home from "./components/Home.jsx";
 import Login from "./pages/Login.jsx";
@@ -30,7 +30,7 @@ function App() {
 
   return (
   
-    <HashRouter>
+    <BrowserRouter>
     <InputContext.Provider value={{inputText, setInputText}}>
     <userContext.Provider value={{userInfo,setUserInfo}} >
     <Routes>
@@ -50,7 +50,7 @@ function App() {
     </userContext.Provider>
     </InputContext.Provider>
     <Toaster />
-    </HashRouter>
+    </BrowserRouter>
 
     
   )
