@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
@@ -22,7 +22,7 @@ const SignUpPage = () => {
 
     const handleSubmit = async (e) =>{
         e.preventDefault()
-        console.log("inside  handle submit");
+  
         
     
         try {
@@ -45,11 +45,7 @@ const SignUpPage = () => {
           password:"", 
       })
 
-    } 
-
-    useEffect(() => {
-      console.log("use Effect called")
-    })
+    }
 
 
 
