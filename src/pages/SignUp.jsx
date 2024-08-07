@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
@@ -20,8 +20,10 @@ const SignUpPage = () => {
 
 
 
-    const handleSubmit =async (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault()
+        console.log("inside  handle submit");
+        
     
         try {
             const response = await fetch('https://webserver-dd00.onrender.com/auth/signup',{
@@ -45,7 +47,9 @@ const SignUpPage = () => {
 
     } 
 
-
+    useEffect(() => {
+      console.log("use Effect called")
+    })
 
 
 
