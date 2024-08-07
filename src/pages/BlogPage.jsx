@@ -10,7 +10,7 @@ export default function BlogPage() {
   const [recentPosts, setRecentPosts] = useState(null);
 
   useEffect(() => {
-    fetch("https://webserver-dd00.onrender.com/api/blog/recent-posts")
+    fetch("https://webserver-dd00.onrender.com/api/recent-posts")
       .then(response => response.json())
       .then(posts => setRecentPosts(posts))
       .catch(err => {

@@ -58,7 +58,7 @@ const UpdateBlog = () => {
       return;
     }
     try {
-      const response = await fetch(`https://webserver-dd00.onrender.com/api/${id}`,{
+      const response = await fetch(`https://webserver-dd00.onrender.com/api/blog/${id}`,{
         method : 'PUT',
         headers:{
             'Content-Type': 'application/json'
