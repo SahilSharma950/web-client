@@ -71,7 +71,7 @@ const UpdateBlog = () => {
       const updatedBlog = await response.json()
       console.log("Updated blog : ",updatedBlog)
       toast.success("Blog updated successfully")
-      navigate('/home')
+      navigate('/')
     } catch (error) {
       console.error(error)
     }
@@ -160,7 +160,7 @@ const UpdateBlog = () => {
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Create Blog
+          UPDATE BLOG
         </button>
       </div>
     </form>

@@ -5,8 +5,8 @@ import { useContext, useState } from "react";
 import userContext from "../contex/user";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const { setInputText } = useContext(InputContext);
@@ -67,43 +67,63 @@ const Header = () => {
   return (
     <nav className="h-auto shadow-2xl sticky top-0 bg-white dark:text-white">
       <div className="lg:flex lg:justify-around lg:items-center sm:flex sm:justify-between sm:items-center px-4 py-2">
+       <Link to='/'>
         <img
           src="https://whizametmedia.com/assets/img/allimg/medialogo.webp"
           alt="Whizamet"
           width="100px"
           className="mx-auto lg:mx-0"
         />
-        { userInfo.isLoggedIn ? <div
-          className="relative flex items-center gap-3 mt-2 lg:mt-0 z-10"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <Stack direction="row" spacing={1}>
-            <Avatar {...stringAvatar(userInfo.name)} />
-          </Stack>
-          {isDropdownVisible && (
-            <div
-              className="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-lg"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span className="block w-full px-4 py-2 text-left text-gray-700">
-                {userInfo.name}
-              </span>
-              <button
-                onClick={handleSignOut}
+        </Link>
+        <div>
+        {userInfo.isLoggedIn ? (
+          <div
+            className="relative flex items-center gap-3 mt-2 lg:mt-0 z-10"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Stack direction="row" spacing={1}>
+              <Avatar {...stringAvatar(userInfo.name)} />
+            </Stack>
+            {isDropdownVisible && (
+              <div
+                className="absolute top-full left-0 mt-2 w-40 bg-white border rounded shadow-lg"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-200"
               >
-                Sign Out
-              </button>
-            </div>
-          )}
-        </div>:<Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
-      <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-      Login
-    </Link>}
+                <span className="block w-full px-4 py-2 text-left text-gray-700">
+                  {userInfo.name}
+                </span>
+                <button
+                  onClick={handleSignOut}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-200"
+                >
+                  Sign Out
+                </button>
+              </div>
+            )}
+          </div>
+        ) : 
+          <div className="flex gap-4">
+            <Link
+              to="/login"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
+            >
+              <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+              Login
+            </Link>
+            <Link
+              to="/sign-up"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
+            >
+              <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+              SignUp
+            </Link>
+          </div>
+        }
+        </div>
       </div>
       <hr />
       <div className="flex flex-col lg:flex-row justify-around items-center h-auto lg:h-[13vh] px-4 py-2">

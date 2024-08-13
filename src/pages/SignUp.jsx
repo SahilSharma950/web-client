@@ -18,13 +18,8 @@ const SignUpPage = () => {
 
     const Navigate = useNavigate();
 
-
-
     const handleSubmit = async (e) =>{
-        e.preventDefault()
-  
-        
-    
+        e.preventDefault()   
         try {
             const response = await fetch('https://webserver-dd00.onrender.com/auth/signup',{
                 method : 'POST',
@@ -35,7 +30,7 @@ const SignUpPage = () => {
             })
             const result = await response.json()
             console.log('success : ', result.data)
-            Navigate("/")
+            Navigate("/login")
         } catch (error) {
             console.log('Error:', error);
         }
@@ -46,8 +41,6 @@ const SignUpPage = () => {
       })
 
     }
-
-
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">

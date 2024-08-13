@@ -10,7 +10,6 @@ const Main = () => {
   const { inputText } = useContext(inputContext);
   
 
-
   useEffect(() => {
     const handle = () => {
       const sortData = data.filter((post) =>

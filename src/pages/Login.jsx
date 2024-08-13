@@ -59,7 +59,7 @@ const Login = () => {
           localStorage.setItem("id", decodedToken.id);
           localStorage.setItem("name", decodedToken.name);
           localStorage.setItem("email", decodedToken.email);         
-          Navigate("/home");
+          Navigate("/");
         }
       } catch (error) {
         console.log('Error:', error);

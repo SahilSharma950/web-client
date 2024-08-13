@@ -59,7 +59,7 @@ const CreateBlog = () => {
       const result = await response.json();
       console.log('Blog created: ', result);
       toast.success('Blog created successfully!');
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       console.log('Error: ', error);
       toast.error('Failed to create blog');

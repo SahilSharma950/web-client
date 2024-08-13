@@ -1,6 +1,6 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import './App.css'
-import Home from "./components/Home.jsx";
+// import Home from "./components/Home.jsx";
 import Login from "./pages/Login.jsx";
 import SignUpPage from "./pages/SignUp.jsx";
 import CreateBlog from "./pages/Create.jsx";
@@ -16,6 +16,9 @@ import { useState } from "react";
 import InputContext from "./contex/inputcontext.js";
 import userContext from "./contex/user.js";
 import BlogPage from "./pages/BlogPage.jsx";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import Main from "./components/Main.jsx";
 // import Search from "./pages/Search.jsx";s
 function App() {
 
@@ -33,9 +36,10 @@ function App() {
     <BrowserRouter>
     <InputContext.Provider value={{inputText, setInputText}}>
     <userContext.Provider value={{userInfo,setUserInfo}} >
+    <Header/>
     <Routes>
-      <Route path="/" element={<Login/>}/>
-      <Route path="/home" element={<Home/>}/>
+      <Route path="/" element={<Main/>}/>
+      <Route path="/login" element={<Login/>}/>
       <Route path="/sign-up" element={<SignUpPage/>}/>
       <Route path="/createblog" element={<CreateBlog/>} />
       <Route path="/blog/:id" element={<BlogPost/>}/>
@@ -45,8 +49,8 @@ function App() {
       <Route path="/reset-password/:token" element={<ResetPassword/>}/>
       <Route path="/upload" element={<Upload/>}/>
       <Route path="/blogpage/:id" element={<BlogPage/>}/>
-   
     </Routes>
+    <Footer/>
     </userContext.Provider>
     </InputContext.Provider>
     <Toaster />
