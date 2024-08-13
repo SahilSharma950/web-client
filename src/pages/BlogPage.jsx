@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { format } from 'date-fns';
 
 export default function BlogPage() {
@@ -103,7 +103,9 @@ export default function BlogPage() {
               <div key={index} className="flex gap-4 mt-4">
                 <img src={post.imageUrl} alt={post.title} className="w-16 h-16 rounded object-cover" />
                 <div>
-                  <h3 className="text-lg font-medium">{post.title}</h3>
+                  <Link to={`/blogpage/${post._id}`}>
+                  <h3 className="text-lg font-medium hover:text-teal-400">{post.title}</h3>
+                  </Link>
                   <p className="text-sm text-gray-600"><strong >Date : </strong> {formatDate(post.createdAt)}</p>
                   <p> <strong className='mr-1'>Time :</strong>{formatTime(post.createdAt)}</p>
                 </div>

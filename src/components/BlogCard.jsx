@@ -7,6 +7,7 @@ const BlogCard = ({ title, author, imageUrl, id, onDelete, tags,createdAt }) => 
   const { userInfo } = useContext(userContext);
 
   return (
+    <Link to={`/blogpage/${id}`}>
     <div className="w-[23vw] mx-auto bg-white shadow-lg rounded-lg overflow-hidden mb-4">
       <img className="w-full h-72 object-cover object-center" src={imageUrl} alt="Blog" />
       <div className="px-4 py-2">
@@ -48,6 +49,7 @@ const BlogCard = ({ title, author, imageUrl, id, onDelete, tags,createdAt }) => 
         )}
       </div>
     </div>
+    </Link>
   );
 };
 
